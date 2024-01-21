@@ -1,22 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  // Define user fields here matching the GraphQL schema
-  first_name: { type: String, required: [true, "All fields are required"] },
-  last_name: {
-    type: String,
-    required: [true, "All fields are required"],
-  },
-  email: {
-    type: String,
-    required: [true, "All fields are required"],
-  },
-  age: {
-    type: String,
-    required: [true, "All fields are required"],
-  },
-  active: Boolean,
+  name: { type: String, required: true },
+  phone: { type: String, required: true },
+  address: { type: String, required: true },
 });
 
 export default mongoose.models.User || mongoose.model("User", userSchema);

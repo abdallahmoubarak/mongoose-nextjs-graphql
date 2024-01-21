@@ -13,6 +13,7 @@ const handler = startServerAndCreateNextHandler<NextRequest>(server, {
     },
   }),
 });
+
 export async function GET(request: NextRequest) {
   return handler(request);
 }
